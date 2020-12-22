@@ -1,14 +1,12 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "tmd",
+  "name": "Too Many Dungeons",
+  "description": "A dungeon utility mod for Hypixel Skyblock",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["IkeVoodoo", "5vl", "xV_TheMonke"],
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
