@@ -17,14 +17,14 @@ import java.awt.*;
 public class OnRenderGameOverlayEventPost {
 
     private boolean shouldRender;
-    private int coolDown;
+    private int coolDown, coolDownReset = 35;
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     @SideOnly(Side.CLIENT)
     public void onRenderGameOverlayEventPost(RenderGameOverlayEvent.Post event) {
         if(Keyboard.isKeyDown(KeyBindings.GUI_KEY) && coolDown == 0) {
             shouldRender = !shouldRender;
-            coolDown = 35;
+            coolDown = coolDownReset;
         }
         if(coolDown > 0) coolDown -= 1;
         if(shouldRender) TextRenderUtils.renderText(EnumChatFormatting.GREEN + "Hello, World!", 5, 5, true);
