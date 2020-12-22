@@ -14,11 +14,11 @@ import us.tmd.tmd.rendering.TextRenderUtils;
 import java.awt.*;
 
 
-public class OnClientTickEvent {
+public class OnRenderGameOverlayEventPost {
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     @SideOnly(Side.CLIENT)
-    public void onClientTickEvent(RenderGameOverlayEvent event) {
+    public void onRenderGameOverlayEventPost(RenderGameOverlayEvent.Post event) {
         if(Keyboard.isKeyDown(KeyBindings.GUI_KEY)) {
             TextRenderUtils.renderText("Hello, World!", 5, 5, Color.green, true);
         }
