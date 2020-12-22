@@ -17,7 +17,7 @@ import java.awt.*;
 public class OnRenderGameOverlayEventPost {
 
     private boolean shouldRender;
-    private int coolDown, coolDownReset = 35;
+    private int coolDown, coolDownReset = 150;
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     @SideOnly(Side.CLIENT)
