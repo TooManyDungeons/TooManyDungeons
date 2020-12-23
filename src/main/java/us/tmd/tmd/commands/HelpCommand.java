@@ -5,11 +5,11 @@ import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentText;
 
-public class tmdhelp extends CommandBase {
+public class HelpCommand extends CommandBase {
 
     @Override
     public String getCommandName() {
-        return "tmdhelp";
+        return "HelpCommand";
     }
 
     @Override
@@ -20,7 +20,7 @@ public class tmdhelp extends CommandBase {
     @Override
     public void processCommand(ICommandSender sender, String[] args) throws CommandException {
             sender.addChatMessage(new ChatComponentText("Help for TMD."));
-            sender.addChatMessage(new ChatComponentText("/tmdhelp:"));
+            sender.addChatMessage(new ChatComponentText("/HelpCommand:"));
             sender.addChatMessage(new ChatComponentText("This is the command to show this message!"));
             sender.addChatMessage(new ChatComponentText(""));
             sender.addChatMessage(new ChatComponentText("M* or /tmd:"));
