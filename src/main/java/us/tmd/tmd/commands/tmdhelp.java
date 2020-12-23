@@ -4,9 +4,6 @@ import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentText;
-import tv.twitch.chat.Chat;
-
-import java.util.Scanner;
 
 public class tmdhelp extends CommandBase {
 
