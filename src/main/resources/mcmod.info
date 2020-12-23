@@ -1,14 +1,12 @@
-[
-{
+[{
   "modid": "tmd",
   "name": "Too Many Dungeons",
-  "description": "A dungeon utility mod for Hypixel Skyblock",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "updateUrl": "",
-  "authorList": ["IkeVoodoo", "5vl", "xV_TheMonke"],
+  "description": "Dungeon mod for the Hypixel Skyblock Dungeons",
+  "version": "0.0.1",
+  "mcversion": "1.8.9",
   "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
-}
-]
+  "url": "",
+  "updateJSON": "",
+  "authorList": ["IkeVoodoo", "5vl", "vX_TheMonke"],
+  "credits": ""
+}]

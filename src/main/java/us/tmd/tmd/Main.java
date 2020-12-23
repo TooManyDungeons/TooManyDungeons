@@ -1,12 +1,16 @@
 package us.tmd.tmd;
 
+import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import org.lwjgl.input.Keyboard;
 import us.tmd.tmd.events.OnRenderGameOverlayEventPost;
+
+import javax.swing.text.JTextComponent;
 
 @Mod(modid = Main.MODID, name = Main.MOD_NAME, version = Main.VERSION)
 public class Main
@@ -22,13 +26,19 @@ public class Main
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+        // Register events
         MinecraftForge.EVENT_BUS.register(new OnRenderGameOverlayEventPost());
+
+        // KeyBindings
+        KeyBindings.bind("menu", new KeyBinding("key.menu", Keyboard.KEY_M, "key.categories.tmd"));
+
         System.out.println("Thank you for using the TMD mod! With <3 by the TMD team");
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-
+        // Finalize the keybindings and register them, stopping any further binding or unbinding
+        KeyBindings.finalizeKeybindings();
     }
 
 }
