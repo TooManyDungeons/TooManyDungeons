@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.lwjgl.input.Keyboard;
-import us.tmd.tmd.commands.tmdhelp;
+import us.tmd.tmd.commands.HelpCommand;
 import us.tmd.tmd.events.OnRenderGameOverlayEventPost;
 
 @Mod(modid = Main.MODID, name = Main.MOD_NAME, version = Main.VERSION)
@@ -33,7 +33,7 @@ public class Main
         KeyBindings.bind("menu", new KeyBinding("key.menu", Keyboard.KEY_M, "key.categories.tmd"));
 
         // Commands
-        ClientCommandHandler.instance.registerCommand(new tmdhelp());
+        ClientCommandHandler.instance.registerCommand(new HelpCommand());
 
         System.out.println("Thank you for using the TMD mod! With <3 by the TMD team");
     }
