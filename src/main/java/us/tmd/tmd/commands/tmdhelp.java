@@ -17,7 +17,7 @@ public class tmdhelp extends CommandBase {
 
     @Override
     public String getCommandUsage(ICommandSender iCommandSender) {
-        return "tmdhelp <page>";
+        return null;
     }
 
     @Override
