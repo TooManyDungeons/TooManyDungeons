@@ -18,7 +18,7 @@ public class OnRenderGameOverlayEventPost {
     public void onRenderGameOverlayEventPost(RenderGameOverlayEvent.Post event) {
         if(KeyBindings.getBind("menu").isPressed())
             shouldRender = !shouldRender;
-        if(shouldRender) TextRenderUtils.renderText(EnumChatFormatting.GREEN + "Hello, World!", 5, 5, true);
+        if(shouldRender && event.type == RenderGameOverlayEvent.ElementType.TEXT) TextRenderUtils.renderText(EnumChatFormatting.GREEN + "Hello, World!", 5, 5, true);
     }
 
 }
