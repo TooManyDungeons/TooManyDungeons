@@ -4,6 +4,9 @@ import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentText;
+import tv.twitch.chat.Chat;
+
+import java.util.Scanner;
 
 public class tmdhelp extends CommandBase {
 
@@ -14,13 +17,19 @@ public class tmdhelp extends CommandBase {
 
     @Override
     public String getCommandUsage(ICommandSender iCommandSender) {
-        return null;
+        return "tmdhelp <page>";
     }
 
     @Override
     public void processCommand(ICommandSender sender, String[] args) throws CommandException {
-        sender.addChatMessage(new ChatComponentText("This is the TMD help command!"));
-
+            sender.addChatMessage(new ChatComponentText("Help for TMD."));
+            sender.addChatMessage(new ChatComponentText("/tmdhelp:"));
+            sender.addChatMessage(new ChatComponentText("This is the command to show this message!"));
+            sender.addChatMessage(new ChatComponentText(""));
+            sender.addChatMessage(new ChatComponentText("M* or /tmd:"));
+            sender.addChatMessage(new ChatComponentText("Open the main GUI."));
+            sender.addChatMessage(new ChatComponentText(""));
+            sender.addChatMessage(new ChatComponentText("*: Main keybind - you can change this in your controls"));
     }
 
     @Override
