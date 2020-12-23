@@ -1,9 +1,6 @@
-package us.tmd.tmd.rendering;
+package us.tmd.tmd.Utils;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.util.EnumChatFormatting;
-
-import java.awt.*;
 
 public class TextRenderUtils {
 

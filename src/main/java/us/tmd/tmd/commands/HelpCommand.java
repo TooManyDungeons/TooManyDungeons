@@ -1,15 +1,16 @@
 package us.tmd.tmd.commands;
 
 import net.minecraft.command.CommandBase;
-import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
-import net.minecraft.util.ChatComponentText;
+import org.lwjgl.input.Keyboard;
+import us.tmd.tmd.KeyBindings;
+import us.tmd.tmd.Utils.ChatUtils;
 
 public class HelpCommand extends CommandBase {
 
     @Override
     public String getCommandName() {
-        return "HelpCommand";
+        return "tmdhelp";
     }
 
     @Override
@@ -18,15 +19,21 @@ public class HelpCommand extends CommandBase {
     }
 
     @Override
-    public void processCommand(ICommandSender sender, String[] args) throws CommandException {
-            sender.addChatMessage(new ChatComponentText("Help for TMD."));
-            sender.addChatMessage(new ChatComponentText("/HelpCommand:"));
-            sender.addChatMessage(new ChatComponentText("This is the command to show this message!"));
-            sender.addChatMessage(new ChatComponentText(""));
-            sender.addChatMessage(new ChatComponentText("M* or /tmd:"));
-            sender.addChatMessage(new ChatComponentText("Open the main GUI."));
-            sender.addChatMessage(new ChatComponentText(""));
-            sender.addChatMessage(new ChatComponentText("*: Main keybind - you can change this in your controls"));
+    public void processCommand(ICommandSender sender, String[] args) {
+        int page = Integer.parseInt(args.length > 0 ? args[0] : "1");
+        int pages = 1;
+        switch(page) {
+                case 1:
+                    ChatUtils.logChat("Showing help for TMD. (Page 1 of " + pages + ")");
+                    ChatUtils.logChat("Command: /tmdhelp");
+                    ChatUtils.logChat("Description: Display the help message");
+                    ChatUtils.logChat("");
+                    ChatUtils.logChat("Use the \"" + Keyboard.getKeyName(KeyBindings.getBind("menu").getKeyCode()) + "\" keybind or the \"/tmd\" command to open the main gui");
+                    break;
+                case 2:
+                    ChatUtils.logChat("Fuck you");
+                    break;
+            }
     }
 
     @Override
