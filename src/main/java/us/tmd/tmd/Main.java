@@ -12,8 +12,6 @@ import org.lwjgl.input.Keyboard;
 import us.tmd.tmd.commands.tmdhelp;
 import us.tmd.tmd.events.OnRenderGameOverlayEventPost;
 
-import javax.swing.text.JTextComponent;
-
 @Mod(modid = Main.MODID, name = Main.MOD_NAME, version = Main.VERSION)
 public class Main
 {
