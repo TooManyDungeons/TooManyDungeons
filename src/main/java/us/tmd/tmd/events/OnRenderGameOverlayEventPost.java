@@ -14,6 +14,8 @@ public class OnRenderGameOverlayEventPost {
 
     private boolean shouldRender;
 
+    private int coolDown, coolDownReset = 150;
+
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     @SideOnly(Side.CLIENT)
     public void onRenderGameOverlayEventPost(RenderGameOverlayEvent.Post event) {
