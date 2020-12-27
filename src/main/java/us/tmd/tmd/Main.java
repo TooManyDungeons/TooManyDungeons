@@ -1,9 +1,6 @@
 package us.tmd.tmd;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.settings.KeyBinding;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -21,7 +18,6 @@ public class Main
     public static final String MODID = "tmd";
     public static final String MOD_NAME = "Too Many Dungeons";
     public static final String VERSION = "1.0";
-
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
