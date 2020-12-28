@@ -36,7 +36,7 @@ public class OnRenderGameOverlayEventPost {
         if(event.type == RenderGameOverlayEvent.ElementType.TEXT && showPickup)
             for(int i = 0; i < showing.size(); i++) {
 
-                TextRenderUtils.renderText(EnumChatFormatting.GREEN + "+" + EnumChatFormatting.WHITE + showing.get(i), 5, (5 * (i * 2)) + 5, true);
+                TextRenderUtils.renderText(EnumChatFormatting.GREEN + "+ " + EnumChatFormatting.WHITE + showing.get(i), 5, (5 * (i * 2)) + 5, true);
             }
     }
 
