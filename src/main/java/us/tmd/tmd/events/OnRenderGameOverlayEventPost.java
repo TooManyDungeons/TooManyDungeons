@@ -4,6 +4,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
+import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent;
@@ -35,7 +36,7 @@ public class OnRenderGameOverlayEventPost {
         if(event.type == RenderGameOverlayEvent.ElementType.TEXT && showPickup)
             for(int i = 0; i < showing.size(); i++) {
 
-                TextRenderUtils.renderText(EnumChatFormatting.GREEN + "You picked up: " + EnumChatFormatting.WHITE + showing.get(i), 5, (5 * (i * 2)) + 5, true);
+                TextRenderUtils.renderText(EnumChatFormatting.GREEN + "+" + EnumChatFormatting.WHITE + showing.get(i), 5, (5 * (i * 2)) + 5, true);
             }
     }
 
@@ -48,13 +49,13 @@ public class OnRenderGameOverlayEventPost {
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public void onItemPickupEvent(final PlayerEvent.ItemPickupEvent event) {
+    public void onItemPickupEvent(final EntityItemPickupEvent event) {
         new Thread() {
             @Override
             public void run() {
                 if(showPickup) {
                     int x = showing.size() + 1;
-                    ItemStack itemStack = event.pickedUp.getEntityItem();
+                    ItemStack itemStack = event.item.getEntityItem();
                     if(!unwanted.contains(itemStack.getDisplayName())) {
                         showing.add(itemStack.getDisplayName());
                         try {
