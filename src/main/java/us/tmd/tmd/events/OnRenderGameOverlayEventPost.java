@@ -49,13 +49,13 @@ public class OnRenderGameOverlayEventPost {
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public void onItemPickupEvent(final EntityItemPickupEvent event) {
+    public void onItemPickupEvent(final PlayerEvent.ItemPickupEvent event) {
         new Thread() {
             @Override
             public void run() {
                 if(showPickup) {
                     int x = showing.size() + 1;
-                    ItemStack itemStack = event.item.getEntityItem();
+                    ItemStack itemStack = event.pickedUp.getEntityItem();
                     if(!unwanted.contains(itemStack.getDisplayName())) {
                         showing.add(itemStack.getDisplayName());
                         try {
