@@ -31,7 +31,7 @@ public class OnRenderGameOverlayEventPost {
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public void onRenderGameOverlayEventPost(RenderGameOverlayEvent.Post event) {
+    public void onRenderGameOverlayEventPost(RenderGameOverlayEvent event) {
         if(event.type == RenderGameOverlayEvent.ElementType.TEXT && showPickup)
             for(int i = 0; i < showing.size(); i++) {
 
